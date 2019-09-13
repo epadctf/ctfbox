@@ -46,7 +46,9 @@ RUN gem install one_gadget
 
 # Clone EPAD dotfiles
 RUN git clone https://github.com/epadctf/dotfiles.git /root/dotfiles \
-    && rm -rf /root/.git
+    && mv /root/dotfiles/.vimrc /root/. \
+    && mv /root/dotfiles/.bashrc /root/. \
+    && rm -rf /root/dotfiles
 
 WORKDIR /root/ctf
 CMD ["/bin/bash", "-i"]
