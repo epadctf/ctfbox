@@ -1,6 +1,20 @@
 FROM ubuntu:latest
 MAINTAINER epadctf <epadctf@gmail.com>
 
+# Build-time metadata as defined at http://label-schema.org
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE \
+        org.label-schema.name="ctfbox" \
+        org.label-schema.description="The lighter, leaner, meaner ctfbox, without all the crap" \
+        org.label-schema.url="https://github.com/epadctf/ctfbox" \
+        org.label-schema.vcs-ref=$VCS_REF \
+        org.label-schema.vcs-url="https://github.com/epadctf/ctfbox" \
+        org.label-schema.vendor="epadctf" \
+        org.label-schema.version=$VERSION \
+        org.label-schema.schema-version="1.0"
+
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
