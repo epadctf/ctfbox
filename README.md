@@ -40,5 +40,5 @@ docker run -it epadctf/ctfbox
 If you have problems with gdb or gdbserver you can run the container in privileged mode and with the host network.
 
 ```bash
-sudo docker run -it --privileged --net=host epadctf/ctfbox
+sudo docker run -it --rm --privileged --net=host -v $(pwd):/root/ctf epadctf/ctfbox
 ```
