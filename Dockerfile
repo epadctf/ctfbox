@@ -27,7 +27,7 @@ RUN dpkg --add-architecture i386 \
     ruby
 
 # Python libs
-RUN pip2 install --upgrade pip \
+RUN pip2 install --upgrade pip==9.0.3 \
     && pip2 install --upgrade pycrypto
 
 # Pwntools
@@ -43,6 +43,10 @@ RUN git clone https://github.com/JonathanSalwan/ROPgadget /home/ctf/tools/ROPgad
 
 # Install one_gadget
 RUN gem install one_gadget
+
+# Clone EPAD dotfiles
+RUN git clone https://github.com/epadctf/dotfiles.git /root/dotfiles \
+    && rm -rf /root/.git
 
 WORKDIR /root/ctf
 CMD ["/bin/bash", "-i"]
