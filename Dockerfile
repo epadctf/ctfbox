@@ -48,7 +48,8 @@ RUN gem install one_gadget
 RUN git clone https://github.com/epadctf/dotfiles.git /root/dotfiles \
     && mv /root/dotfiles/.vimrc /root/. \
     && mv /root/dotfiles/.bashrc /root/. \
+    && mv /root/dotfiles/.tmux.conf /root/. \
     && rm -rf /root/dotfiles
 
 WORKDIR /root/ctf
-CMD ["/bin/bash", "-i"]
+CMD ["/usr/bin/tmux"]
