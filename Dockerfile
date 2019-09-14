@@ -22,6 +22,9 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -yq install \
     build-essential \
+    libc6:i386 \
+    libncurses5:i386 \
+    libstdc++6:i386 \
     python2.7 \
     python2.7-dev \
     python-pip \
@@ -35,6 +38,7 @@ RUN dpkg --add-architecture i386 \
     curl \
     wget \
     vim \
+    netcat \
     qemu \
     qemu-user \
     qemu-user-static \
